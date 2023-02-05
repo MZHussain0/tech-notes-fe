@@ -11,10 +11,12 @@ const initialState = noteAdapter.getInitialState();
 export const notesApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getNotes: builder.query({
-      query: () => "/notes",
-      validateStatus: (response, result) => {
-        return response.status === 200 && !result.isError;
-      },
+      query: () => ({
+        url: "/notes",
+        validateStatus: (response, result) => {
+          return response.status === 200 && !result.isError;
+        },
+      }),
       transformResponse: (responseData) => {
         const loadNotes = responseData.map((note) => {
           note.id = note._id;
