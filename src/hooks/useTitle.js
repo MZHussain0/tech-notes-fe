@@ -1,7 +1,4 @@
-const { useEffect } = require("react");
-
-import React from "react";
-
+import { useEffect } from "react";
 const useTitle = (title) => {
   useEffect(() => {
     const prevTitle = document.title;
