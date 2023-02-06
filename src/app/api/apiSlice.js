@@ -2,9 +2,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { setCredentials } from "../../features/auth/authSlice";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://technotes-apibuild.onrender.com",
-  // credentials: "include",
-  credentials: "same-origin",
+  baseUrl: "https://technotespro.netlify.app",
+  credentials: "include",
+  // credentials: "same-origin",
   prepareHeaders: (headers, { getState }) => {
     const token = getState().auth.token;
 
